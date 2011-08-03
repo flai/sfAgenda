@@ -1,0 +1,68 @@
+
+                  AGENDA DE CONTACTOS
+               -------------------------
+
+Este desarrollo corresponde al ejercicio final del curso de
+formación online sobre symfony 1.4 (básico), impartipo por
+Flai Webnected.
+
+Con este ejercicio, se pretende hacer un repaso de los
+conceptos asimilados en el curso.
+
+El contenido del curso puede consultarse en:
+
+   http://flai.es/16/formacion-symfony-1-4-basico
+
+Las especificaciones completas de este ejercicio se pueden
+consultar:
+
+   http://formacion.flai.es
+
+Descripción del ejercicio
+-------------------------
+
+   Se trata de codificar una agenda, donde se puede consultar
+   y gestionar información sobre personas de contactos.
+   
+   La aplicación constará de la siguiente funcionalidad:
+   
+     - Página principal donde se visualizan los contactos más
+       consultados.
+     - Página de resultado de búsqueda que consiste en un
+       listado de contactos.
+     - Página de detalle de un contacto.
+     - Formulario de creación de contactos.
+     - Formulario de edición de contactos.
+     - Borrado de contactos.
+   
+   De cada contacto, se podrá almacenar los campos que se
+   detallan a continuación:
+   
+     - nombre
+     - primer apellido
+     - segundo apellido
+     - imagen
+     - número de visitas
+     - cero o más direcciones que cuentan con la información:
+           - dirección postal
+           - email
+           - teléfono
+           - otra información
+           - si la dirección es la predeterminada o no
+           
+
+Modo de trabajo
+-----------------
+
+   Debido a que la ejecución del proyecto se adecúa al curso
+   online, se irá construyendo poco a poco, marcando en
+   github cada una de las fases como una rama diferente del
+   desarrollo.
+
+
+               -------------------------
+
+       Esperamos que este código te sirva de ayuda.
+       
+          Saludos del equipo de Flai Webnected
+                  (formacion@flai.es)

@@ -1,0 +1,22 @@
+# Documentos de MAC
+.DS_Store
+
+# Documentos de Eclipse
+.buildpath
+.project
+.settings
+
+# Documentos de Symfony
+cache
+
+data/sql/schema.sql
+
+lib/*/doctrine/base
+lib/*/doctrine/*/base
+
+log
+
+plugins/.*
+plugins/*/.*
+
+web/sf
