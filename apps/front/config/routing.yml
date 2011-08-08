@@ -7,7 +7,7 @@ homepage:
   param: { module: static, action: index }
 
 listpage:
-  url:   /busqueda
+  url:   /busqueda/:param
   param: { module: static, action: list }
 
 detailpage:

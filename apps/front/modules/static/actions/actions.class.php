@@ -18,6 +18,8 @@ class staticActions extends sfActions
 
   public function executeList(sfWebRequest $request)
   {
+    $letter          = $request->getParameter('param');
+    $this->contactos = Doctrine::getTable('Contacto')->buscar( $letter );
   }
 
   public function executeDetail(sfWebRequest $request)

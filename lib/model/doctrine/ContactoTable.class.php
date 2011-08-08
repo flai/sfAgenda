@@ -8,6 +8,15 @@
 class ContactoTable extends Doctrine_Table
 {
 
+  public function buscar( $letra )
+  {
+    return Doctrine_Query::create()
+      ->from('Contacto')
+      ->where("primer_apellido LIKE '$letra%'")
+      ->orderBy('primer_apellido asc')
+      ->execute();
+  }
+
   public function masVisitados( $max_elementos )
   {
     return Doctrine_Query::create()

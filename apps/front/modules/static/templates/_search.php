@@ -12,7 +12,7 @@
           <tr>
         <?php endif; ?>
         <td>
-          <a href="<?php echo url_for('listpage'); ?>" title="Buscando por la letra <?php echo $letter; ?>">
+          <a href="<?php echo url_for('listpage', array('param' => $letter)); ?>" title="Buscando por la letra <?php echo $letter; ?>">
             <?php echo strtoupper($letter); ?>
           </a>
         </td>
