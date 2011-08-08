@@ -13,6 +13,7 @@ class staticActions extends sfActions
 
   public function executeIndex(sfWebRequest $request)
   {
+    $this->contactos = Doctrine::getTable('Contacto')->masVisitados( 6 );
   }
 
   public function executeList(sfWebRequest $request)
