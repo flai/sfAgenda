@@ -4,7 +4,27 @@
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: static, action: index }
+
+listpage:
+  url:   /busqueda
+  param: { module: static, action: list }
+
+detailpage:
+  url:   /detalle
+  param: { module: static, action: detail }
+
+newpage:
+  url:   /nuevo
+  param: { module: static, action: new }
+
+editpage:
+  url:   /editar
+  param: { module: static, action: edit }
+
+deletepage:
+  url:   /borrar
+  param: { module: static, action: delete }
 
 # generic rules
 # please, remove them by adding more specific rules

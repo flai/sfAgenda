@@ -1,0 +1,58 @@
+html, body { margin: 0px; padding: 0px; font: 100%/1.3125em Verdana; }
+.container { margin-left: auto; margin-right: auto; width: 990px; }
+
+a { text-decoration:none; color: #c32929; }
+
+.btn { padding: 5px 10px; background-color: #c32929; color: #fff; margin: 5px; }
+
+.small_text { font-size: 12px; }
+.large_text { font-size: 24px; }
+
+.center { text-align: center; }
+.left { text-align: left; }
+.right { text-align: right; }
+
+.fleft { float: left; }
+.fright { float: right; }
+.clear { clear: both; }
+
+/********************
+ CABECERA
+ ********************/
+.header { background-color: #c32929; height: 80px; }
+.header h1 { margin: 0; padding: 25px 0px; }
+.header h1 a { color: #fff; }
+
+/********************
+ PIE
+ ********************/
+.footer { background-color: #c32929; height: 60px; color: #fff; padding: 10px; font-size: 12px; margin-top: 20px; }
+
+/********************
+ COLUMNA IZQUIERDA
+ ********************/
+.column { padding: 10px 0px; float: left; display:inline; width: 200px;}
+.column table tr td { padding: 10px; border: 1px solid #000; }
+
+.box_search { padding-top: 30px; }
+
+/********************
+ CONTENIDO
+ ********************/
+.content { float: right; display:inline; width: 770px; }
+.content img { padding-right: 10px; }
+.content table { width: 100%; }
+
+.address { margin-bottom: 30px; }
+
+.box_mini { float: left; width: 200px; }
+.box_mini_complementary { float: right; width: 550px; }
+.box_medium { float: left; width: 300px; }
+.box_medium_complementary { float: right; width: 445px; }
+
+.box_item { float: left; width: 375px; padding: 10px 5px; }
+
+/********************
+ FORMULARIO
+ ********************/
+input[type='text'], textarea { width: 100%; }
