@@ -1,14 +1,16 @@
 <h2>Detalle de un contato</h2>
 <div class="box_medium">
   <p>
-    <img width="300" src="http://dummyimage.com/600x400/000/fff&amp;text=IMG" alt="Imagen del contacto" />
+    <img width="300"
+      src="<?php echo DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $contacto->imagen; ?>"
+      alt="Fotografía de <?php echo trim( sprintf( '%s %s %s', $contacto->nombre, $contacto->primer_apellido, $contacto->segundo_apellido ) );?>" />
   </p>
 </div>
 <div class="box_medium_complementary">
   <p class="large_text">
-    Nombre <strong>Apellido1 Apellido2</strong>
+    <?php echo $contacto->nombre; ?> <strong><?php echo trim( sprintf( '%s %s', $contacto->primer_apellido, $contacto->segundo_apellido ) );?></strong>
   </p>
-  <?php include_partial('static/address'); ?>
+  <?php include_partial('static/address', array('direccion' => $contacto->getDireccionPrincipal())); ?>
   <p class="right">
     <a class="btn" href="<?php echo url_for('editpage'); ?>" title="Editar el contacto">Editar información</a>
     <a class="btn" href="<?php echo url_for('deletepage'); ?>" title="Borrar el contacto">Borrar</a>
@@ -16,16 +18,16 @@
 </div>
 <div class="clear"></div>
 <h3>Otras direcciones</h3>
-<?php for( $i = 0 ; $i < 2; $i++): ?>
+<?php foreach( $contacto->getOtrasDirecciones() as $key => $direccion ): ?>
   <div class="address">
     <div class="box_mini">
       <p>
-        Dirección <?php echo $i + 1; ?>
+        Dirección <?php echo $key + 1; ?>
       </p>
     </div>
     <div class="box_mini_complementary">
-      <?php include_partial('static/address'); ?>
+      <?php include_partial('static/address', array('direccion' => $direccion)); ?>
     </div>
     <div class="clear"></div>
   </div>
-<?php endfor; ?>
+<?php endforeach; ?>

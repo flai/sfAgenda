@@ -24,6 +24,7 @@ class staticActions extends sfActions
 
   public function executeDetail(sfWebRequest $request)
   {
+    $this->contacto = $this->getRoute()->getObject();
   }
 
   public function executeNew(sfWebRequest $request)

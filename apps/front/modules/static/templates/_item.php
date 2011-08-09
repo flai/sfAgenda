@@ -8,7 +8,7 @@
   </div>
   <div class="fleft">
     <p>
-      <a href="<?php echo url_for('detailpage'); ?>" title="Detalle de un contacto">
+      <a href="<?php echo url_for('detailpage', $contacto); ?>" title="Detalle de un contacto">
         <?php echo $contacto->nombre; ?> <strong><?php echo trim( sprintf( '%s %s', $contacto->primer_apellido, $contacto->segundo_apellido ) );?></strong>
       </a>
     </p>

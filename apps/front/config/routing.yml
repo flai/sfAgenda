@@ -11,8 +11,14 @@ listpage:
   param: { module: static, action: list }
 
 detailpage:
-  url:   /detalle
-  param: { module: static, action: detail }
+  class: sfDoctrineRoute
+  options:
+    model: Contacto
+    type: object
+  url: /detalle/:id/:slug
+  param:
+    module: static
+    action: detail
 
 newpage:
   url:   /nuevo
