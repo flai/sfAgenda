@@ -37,8 +37,18 @@ editpage:
     sf_method: [ get, post ]
 
 deletepage:
-  url:   /borrar
-  param: { module: static, action: delete }
+  class: sfDoctrineRoute
+  options:
+    model: Contacto
+    type: object
+  url: /borrar/:id/:slug
+  param:
+    module: static
+    action: delete
+    
+deleteokpage:
+  url:   /borrado
+  param: { module: static, action: deleteOk }
 
 # generic rules
 # please, remove them by adding more specific rules

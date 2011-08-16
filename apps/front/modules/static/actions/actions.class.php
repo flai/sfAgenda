@@ -76,6 +76,39 @@ class staticActions extends sfActions
 
   public function executeDelete(sfWebRequest $request)
   {
+    $contacto = $this->getRoute()->getObject();
+
+    $conn = Doctrine_Manager::connection();
+    try
+    {
+      $conn->beginTransaction();
+
+      Doctrine_Query::create()
+      ->delete()
+      ->from('Direccion')
+      ->andWhere('contacto_id = ?', $contacto->getId())
+      ->execute();
+
+      if( $contacto->delete($conn) )
+      {
+        $conn->commit();
+        $this->redirect('deleteokpage');
+      }
+      else
+      {
+        $conn->rollback();
+        $this->getUser()->setFlash('error', 'No se pudo eliminar el contacto.');
+      }
+    }
+    catch(Doctrine_Exception $e)
+    {
+      $conn->rollback();
+      $this->getUser()->setFlash('error', 'No se pudieron eliminar las direcciones asociadas al contacto.');
+    }
+  }
+
+  public function executeDeleteOk(sfWebRequest $request)
+  {
   }
 
 }

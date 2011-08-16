@@ -50,5 +50,4 @@ class Contacto extends BaseContacto
     return $this->otras_direcciones;
   }
 
-  
 }
