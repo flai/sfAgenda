@@ -3,7 +3,7 @@ html, body { margin: 0px; padding: 0px; font: 100%/1.3125em Verdana; }
 
 a { text-decoration:none; color: #c32929; }
 
-.btn { padding: 5px 10px; background-color: #c32929; color: #fff; margin: 5px; }
+.btn { padding: 5px 10px; background-color: #c32929; color: #fff; margin: 5px; border: none; font: 100%/1.3125em Verdana; }
 
 .small_text { font-size: 12px; }
 .large_text { font-size: 24px; }
@@ -51,6 +51,12 @@ a { text-decoration:none; color: #c32929; }
 .box_medium_complementary { float: right; width: 445px; }
 
 .box_item { float: left; width: 375px; padding: 10px 5px; }
+
+.error_list { list-style: none; background-color: red; color: white; font-weight: bold; font-size: 12px; padding: 2px 10px; }
+
+.notice { background-color: green; color: white; font-weight: bold; font-size: 12px; padding: 2px 10px; margin-bottom: 10px; }
+.error { background-color: red; color: white; font-weight: bold; font-size: 12px; padding: 2px 10px; margin-bottom: 10px; }
+
 
 /********************
  FORMULARIO

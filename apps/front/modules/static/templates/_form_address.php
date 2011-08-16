@@ -1,7 +1,7 @@
 <div class="address">
   <div class="box_mini">
     <p>
-      Dirección <?php echo $index + 1; ?>
+      Dirección <?php echo $key2; ?>
     </p>
   </div>
   <div class="box_mini_complementary">
@@ -11,7 +11,8 @@
           <span class="small_text">Dirección:</span>
         </td>
         <td>
-          <textarea></textarea>
+          <?php echo $form[$key1][$key2]['direccion']->renderError(); ?>
+          <?php echo $form[$key1][$key2]['direccion']; ?>
         </td>
       </tr>
       <tr>
@@ -19,7 +20,8 @@
           <span class="small_text">¿Predeterminada?:</span>
         </td>
         <td>
-          <input type="checkbox" />
+          <?php echo $form[$key1][$key2]['predeterminado']->renderError(); ?>
+          <?php echo $form[$key1][$key2]['predeterminado']; ?>
         </td>
       </tr>
       <tr>
@@ -27,7 +29,8 @@
           <span class="small_text">Correo electrónico:</span>
         </td>
         <td>
-          <input type="text" />
+          <?php echo $form[$key1][$key2]['email']->renderError(); ?>
+          <?php echo $form[$key1][$key2]['email']; ?>
         </td>
       </tr>
       <tr>
@@ -35,7 +38,8 @@
           <span class="small_text">Teléfono:</span>
         </td>
         <td>
-          <input type="text" />
+          <?php echo $form[$key1][$key2]['telefono']->renderError(); ?>
+          <?php echo $form[$key1][$key2]['telefono']; ?>
         </td>
       </tr>
       <tr>
@@ -43,7 +47,8 @@
           <span class="small_text">Otra información:</span>
         </td>
         <td>
-          <textarea></textarea>
+          <?php echo $form[$key1][$key2]['info_adicional']->renderError(); ?>
+          <?php echo $form[$key1][$key2]['info_adicional']; ?>
         </td>
       </tr>
     </table>
