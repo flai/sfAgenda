@@ -12,6 +12,7 @@
  */
 class Contacto extends BaseContacto
 {
+  
   protected $direccion_principal;
   protected $otras_direcciones = array();
   

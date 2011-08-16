@@ -12,7 +12,7 @@
   </p>
   <?php include_partial('static/address', array('direccion' => $contacto->getDireccionPrincipal())); ?>
   <p class="right">
-    <a class="btn" href="<?php echo url_for('editpage'); ?>" title="Editar el contacto">Editar información</a>
+    <a class="btn" href="<?php echo url_for('editpage', $contacto); ?>" title="Editar el contacto">Editar información</a>
     <a class="btn" href="<?php echo url_for('deletepage'); ?>" title="Borrar el contacto">Borrar</a>
   </p>
 </div>

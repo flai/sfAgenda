@@ -52,6 +52,26 @@ class staticActions extends sfActions
 
   public function executeEdit(sfWebRequest $request)
   {
+    $this->contacto = $this->getRoute()->getObject();
+    $this->form = new ContactoForm( $this->contacto );
+
+    if($request->getMethod() == sfRequest::POST)
+    {
+      $this->form->bind($request->getParameter($this->form->getName()), $request->getFiles($this->form->getName()));
+
+      if($this->form->isValid())
+      {
+        try
+        {
+          $this->form->save();
+          $this->getUser()->setFlash('notice', 'El contacto se ha almacenado correctamente.');
+        }
+        catch(Exception $e)
+        {
+          $this->getUser()->setFlash('error', 'No se pudo actualizar la información.');
+        }
+      }
+    }
   }
 
   public function executeDelete(sfWebRequest $request)

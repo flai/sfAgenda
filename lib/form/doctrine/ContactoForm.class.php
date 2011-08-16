@@ -19,10 +19,11 @@ class ContactoForm extends BaseContactoForm
     $this->widgetSchema['imagen'] = new sfWidgetFormInputFile();
 
     // Address form
+    $address       = $this->getObject()->getDirecciones();
     $address_forms = new sfForm();
-    $address_forms->embedForm('1', new DireccionForm());
-    $address_forms->embedForm('2', new DireccionForm());
-    $address_forms->embedForm('3', new DireccionForm());
+    $address_forms->embedForm('1', isset($address[0]) ? new DireccionForm( $address[0] ) : new DireccionForm() );
+    $address_forms->embedForm('2', isset($address[1]) ? new DireccionForm( $address[1] ) : new DireccionForm() );
+    $address_forms->embedForm('3', isset($address[2]) ? new DireccionForm( $address[2] ) : new DireccionForm() );
 
     $this->embedForm( 'direcciones', $address_forms );
 
@@ -30,13 +31,13 @@ class ContactoForm extends BaseContactoForm
     $this->validatorSchema['nombre']          = new sfValidatorString( array('required' => true) );
     $this->validatorSchema['primer_apellido'] = new sfValidatorString( array('required' => true) );
     $this->validatorSchema['imagen']          = new sfValidatorFile(
-      array(
+    array(
         'required'   => false,
         'path'       => sfConfig::get('sf_upload_dir'),
         'mime_types' => 'web_images'
-      ),
-      array( 'invalid' => 'Archivo no válido.', 'mime_types' => 'Las imágenes deben ser de formato JPEG, PNG o GIF.' )
-    );
+        ),
+        array( 'invalid' => 'Archivo no válido.', 'mime_types' => 'Las imágenes deben ser de formato JPEG, PNG o GIF.' )
+        );
   }
 
   protected function doSave($con = null)
@@ -48,14 +49,16 @@ class ContactoForm extends BaseContactoForm
 
     $this->updateObject();
 
+    if( !$this->isNew() )
+    {
+      Doctrine_Query::create()
+      ->delete()
+      ->from('Direccion')
+      ->andWhere('contacto_id = ?', $this->getObject()->getId())
+      ->execute();
+    }
+
     $this->getObject()->save($con);
-
-    Doctrine_Query::create()
-    ->delete()
-    ->from('Direccion')
-    ->andWhere('contacto_id = ?', $this->getObject()->getId())
-    ->execute();
-
 
     $addresses = $this->getValue('direcciones');
     if( !empty($addresses) )
@@ -76,6 +79,5 @@ class ContactoForm extends BaseContactoForm
       }
     }
   }
-
 
 }

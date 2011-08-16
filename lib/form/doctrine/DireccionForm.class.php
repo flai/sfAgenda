@@ -11,7 +11,7 @@
 class DireccionForm extends BaseDireccionForm
 {
   public function configure()
-  {
+  {    
     // Validators
     $this->validatorSchema['contacto_id'] = new sfValidatorPass();
   }

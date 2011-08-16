@@ -25,8 +25,16 @@ newpage:
   param: { module: static, action: new }
 
 editpage:
-  url:   /editar
-  param: { module: static, action: edit }
+  class: sfDoctrineRoute
+  options:
+    model: Contacto
+    type: object
+  url: /editar/:id/:slug
+  param:
+    module: static
+    action: edit
+  requirements:
+    sf_method: [ get, post ]
 
 deletepage:
   url:   /borrar
